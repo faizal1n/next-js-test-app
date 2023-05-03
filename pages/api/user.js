@@ -1,6 +1,6 @@
-import { createRouter } from "next-connect";
+import { createDefaultRouter } from "@/lib/router.js";
 
-const router = createRouter();
+const router = createDefaultRouter();
 
 router
   .get(async (req, res) => {
@@ -9,17 +9,4 @@ router
     });
   })
 
-export default router.handler({
-  onError: async (err, req, res) => {
-    return res.status(500).json({
-      'message':'Internal server error',
-      'error': null
-    });
-  },
-  onNoMatch: (req, res) => {
-    return res.status(404).json({
-      'message': 'Not found',
-      'result' : null
-    });
-  }
-})
+  export default router.getHandler();
