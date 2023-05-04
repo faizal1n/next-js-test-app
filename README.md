@@ -69,6 +69,17 @@ NextJS also provides mapping alias of all directory using these code in `jsconfi
 Router library (`lib/router.js`) has functions that can generate next-connect router object, complete with error handler
 - `createDefaultRouter` : generate next-connect router object without any middlewares
 
+## MongoDB Connection
+Ensure MongoDB has been installed and been running in the local computer.
+[MongoDB installation guide](https://www.mongodb.com/docs/manual/administration/install-community/)
+
+Copy file `.env.example` as `.env` in this project root directory, and adjust value of `MONGODB_BASE_URI` and `MONGODB_DATABASE` to your MongoDB database
+In the environment file example (`.env.example`), local MongoDB database `pos_db` is used.
+
+In this project, MongoDB connector is `getConnection` function at `lib/mongodb_connection.js`. Page file `pages/api/visitor.js` imports the function and calls it to save URL visitor IP address and visit time then returned today total visitor including current visitor.
+
+
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
