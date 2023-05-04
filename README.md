@@ -69,6 +69,26 @@ NextJS also provides mapping alias of all directory using these code in `jsconfi
 Router library (`lib/router.js`) has functions that can generate next-connect router object, complete with error handler
 - `createDefaultRouter` : generate next-connect router object without any middlewares
 
+
+## Database Connection
+Sequelize ORM is installed in this project as mysql database connector. If you want other SQL database, please change `DB_DIALECT` in the .env file according to the database and install the database javascript library.
+
+Sequelize directory hierarchy configurations are saved in `.sequelizerc` file.
+There are 4 components of Sequelize library in this project:
+
+1. `config.js` file: 
+This file contains configuration setting for Sequelize. In this project, `logging` option is set to false. If `logging` option is true, every executed query will appear in terminal log
+
+2. Models directory
+Database table models and default connector ( `models/index.js` ) will be put in directory `models`.
+
+3. Migrations directory
+Database migration files, for exporting database tables from code, will be located in `database/migrations`
+
+4. Seeders directory
+Database seeder files, for generating default data in database tables, are in `database/seeders`
+
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
