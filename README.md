@@ -70,7 +70,7 @@ Router library (`lib/router.js`) has functions that can generate next-connect ro
 - `createDefaultRouter` : generate next-connect router object without any middlewares
 
 
-## Database Connection
+## Database Connection using Sequelize
 Sequelize ORM is installed in this project as mysql database connector. If you want other SQL database, please change `DB_DIALECT` in the .env file according to the database and install the database javascript library.
 
 Sequelize directory hierarchy configurations are saved in `.sequelizerc` file.
@@ -88,6 +88,15 @@ Database migration files, for exporting database tables from code, will be locat
 4. Seeders directory
 Database seeder files, for generating default data in database tables, are in `database/seeders`
 
+
+### Database migrations
+Sequelize provides migration file when a model created using command line. These command below will create User model and Product Model
+
+```bash
+npx sequelize-cli model:create --name users --attributes first_name:string,last_name:string,username:string,password:string,email:string,profile_image:string,is_active:boolean
+
+npx sequelize-cli model:create --name products --attributes name:string,image:string,description:string,price:integer,created_by:integer,is_active:boolean
+```
 
 ## Learn More
 
