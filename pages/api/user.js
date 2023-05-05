@@ -1,6 +1,6 @@
 import { createDefaultRouter } from "@/lib/router.js";
 import DB from '@/models/index.js';
-import * as UserModel from '@/models/users.js';
+import * as UserModel from '@/models/user.js';
 
 const User = UserModel(DB.sequelize, DB.Sequelize.DataTypes);
 

@@ -1,43 +1,53 @@
 'use strict';
 /** @type {import('sequelize-cli').Migration} */
+
+/**
+ * Change table name from `Users` to `users`
+ */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('products', {
+    await queryInterface.createTable('users', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
+      first_name: {
         type: Sequelize.STRING
       },
-      image: {
+      last_name: {
         type: Sequelize.STRING
       },
-      description: {
+      username: {
         type: Sequelize.STRING
       },
-      price: {
-        type: Sequelize.INTEGER
+      password: {
+        type: Sequelize.STRING
       },
-      created_by: {
-        type: Sequelize.INTEGER
+      email: {
+        type: Sequelize.STRING
+      },
+      profile_image: {
+        type: Sequelize.STRING
       },
       is_active: {
         type: Sequelize.BOOLEAN
       },
-      createdAt: {
+      deleted_at: {
+        type: Sequelize.DATE
+      },
+      created_at: {
         allowNull: false,
         type: Sequelize.DATE
       },
-      updatedAt: {
+      updated_at: {
         allowNull: false,
         type: Sequelize.DATE
       }
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('products');
+    await queryInterface.dropTable('users');
   }
 };

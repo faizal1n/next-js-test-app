@@ -1,4 +1,8 @@
-// import process from 'process';
+// dotenv used for CLI non application command
+const dotenv = require("dotenv")
+dotenv.config();
+
+const process = require('process');
 
 // const config = {
 //   'default': {

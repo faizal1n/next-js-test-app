@@ -71,6 +71,8 @@ Router library (`lib/router.js`) has functions that can generate next-connect ro
 
 
 ## Database Connection using Sequelize
+[Reference](https://sequelize.org/docs/v6/getting-started/)
+
 Sequelize ORM is installed in this project as mysql database connector. If you want other SQL database, please change `DB_DIALECT` in the .env file according to the database and install the database javascript library.
 
 Sequelize directory hierarchy configurations are saved in `.sequelizerc` file.
@@ -90,13 +92,29 @@ Database seeder files, for generating default data in database tables, are in `d
 
 
 ### Database migrations
+[Reference](https://sequelize.org/docs/v6/other-topics/migrations/)
+
 Sequelize provides migration file when a model created using command line. These command below will create User model and Product Model
 
+- this command option `--underscored` will change default Sequelize timestamp field `createdAt` and `updatedAt` to `created_at` and `updated_at` 
 ```bash
-npx sequelize-cli model:create --name users --attributes first_name:string,last_name:string,username:string,password:string,email:string,profile_image:string,is_active:boolean
-
-npx sequelize-cli model:create --name products --attributes name:string,image:string,description:string,price:integer,created_by:integer,is_active:boolean
+npx sequelize-cli model:create --name User --underscored --attributes first_name:string,last_name:string,username:string,password:string,email:string,profile_image:string,is_active:boolean,deleted_at:date
 ```
+
+- this command will create migration column `created_at` and `updated_at`, then Sequelize will add its default timestamp field in migration file
+```bash
+npx sequelize-cli model:create --name Product --attributes name:string,image:string,description:string,price:integer,created_by:integer,is_active:boolean,created_at:date,updated_at:date,deleted_at:date
+```
+
+When the migration command has been executed, we need some adjustment as written in `models/product.js`, `models/user.js`, `database/migrations/20230505075012-create-user.js`, and `database/migrations/20230505075253-create-product.js`.
+
+
+Run this command below to create table as stated in migration files
+```bash
+npx sequelize-cli db:migrate
+```
+
+
 
 ## Learn More
 
