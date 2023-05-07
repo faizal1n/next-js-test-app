@@ -114,7 +114,40 @@ Run this command below to create table as stated in migration files
 npx sequelize-cli db:migrate
 ```
 
+### Database seeders
+[Reference](https://sequelize.org/docs/v6/other-topics/migrations/#creating-the-first-seed)
 
+Seeder for populating SQL table can be created using Sequelize
+
+- create seeder named `demo-user` which contains admin and staff user, and located in `database/seeders/`
+```bash
+npx sequelize-cli seed:generate --name demo-user
+```
+
+- create seeder `demo-products` that will be written in `database/seeders`
+```bash
+npx sequelize-cli seed:generate --name demo-products
+```
+
+- running all seeders in `database/seeders`
+```bash
+npx sequelize-cli db:seed:all
+```
+
+- running certain seeder file
+```bash
+npx sequelize-cli db:seed --seed 20230505100040-demo-products
+```
+
+- undoing all seeds
+```bash
+npx sequelize-cli db:seed:undo:all
+```
+
+- undoing specific seed
+```bash
+npx sequelize-cli db:seed:undo --seed 20230505100040-demo-products
+```
 
 ## Learn More
 
