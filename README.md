@@ -160,6 +160,9 @@ bcrypt is a bcrypt hashing library that is used in create password on user seede
 2. jsonwebtoken
 JSON Web Token (JWT) is used for authentication process in middleware, and as response result of successful login (`pages/api/auth.js`)
 
+## Middlewares
+Custom middlewares, located in `middlewares` directory, are applied with `next-connect` router, as Next middleware that can access server capabilities, such as database access.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

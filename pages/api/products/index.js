@@ -1,14 +1,13 @@
-import { createDefaultRouter } from "@/lib/router.js";
+import { createAuthRouter } from "@/lib/router.js";
 import DB from '@/models/index.js';
-import * as UserModel from '@/models/user.js';
+import * as ProductModel from '@/models/product.js';
 
-const User = UserModel(DB.sequelize, DB.Sequelize.DataTypes);
+const Product = ProductModel(DB.sequelize, DB.Sequelize.DataTypes);
 
-const router = createDefaultRouter();
+const router = createAuthRouter();
 
 router
   .get(async (req, res) => {
-    const user = await new User({id: 1});
 
     const dateResult = await DB.sequelize.query(
       `SELECT CURDATE() as 'current_date'`,
@@ -18,7 +17,7 @@ router
     );
 
     return res.status(200).json({
-      'message': dateResult[0].current_date+" - Welcome",
+      'message': "Product list",
     });
   })
 
