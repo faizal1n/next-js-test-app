@@ -163,6 +163,9 @@ JSON Web Token (JWT) is used for authentication process in middleware, and as re
 ## Middlewares
 Custom middlewares, located in `middlewares` directory, are applied with `next-connect` router, as Next middleware that can access server capabilities, such as database access.
 
+## File Uploads
+[Reference](https://bytearcher.com/articles/formidable-vs-busboy-vs-multer-vs-multiparty/)
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
