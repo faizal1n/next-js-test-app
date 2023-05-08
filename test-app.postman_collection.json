@@ -1,0 +1,60 @@
+{
+	"info": {
+		"_postman_id": "a3466449-e1a0-4e35-a187-baf91e9b7e5d",
+		"name": "test-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "889035"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"admin.nextproduct@maildrop.cc\",\n    \"password\": \"password1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{base_url}}/api/auth"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:3000",
+			"type": "string"
+		},
+		{
+			"key": "access_token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsTmFtZSI6IkFkbWluIE5leHRQcm9kdWN0IiwiZW1haWwiOiJhZG1pbi5uZXh0cHJvZHVjdEBtYWlsZHJvcC5jYyIsInVzZXJJZCI6MSwiaWF0IjoxNjgzNTI4OTkzLCJleHAiOjE2ODM1MzI1OTN9.xzVHvWTB4YM8TLQ8C8PUTmJRD2lPWmOdcKYv_b8Fs-w",
+			"type": "string"
+		}
+	]
+}

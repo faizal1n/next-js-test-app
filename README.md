@@ -15,6 +15,9 @@ npm run dev
 yarn dev
 ```
 
+## Postman Collection
+There is imported Postman collection at `test-app.postman_collection.json` that can be executed to test this project running application.
+
 ## Frontend Routes
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -148,6 +151,14 @@ npx sequelize-cli db:seed:undo:all
 ```bash
 npx sequelize-cli db:seed:undo --seed 20230505100040-demo-products
 ```
+
+## Authentication
+Authentication in this project uses 2 main library:
+1. bcrypt
+bcrypt is a bcrypt hashing library that is used in create password on user seeder, and compare request input password on `pages/api/auth.js`
+
+2. jsonwebtoken
+JSON Web Token (JWT) is used for authentication process in middleware, and as response result of successful login (`pages/api/auth.js`)
 
 ## Learn More
 

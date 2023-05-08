@@ -1,5 +1,9 @@
 'use strict';
 
+const bcrypt = require('bcrypt');
+const saltRounds = parseInt(process.env.BCRYPT_SALT_ROUND);
+const salt = bcrypt.genSaltSync(saltRounds);
+
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
@@ -18,7 +22,7 @@ module.exports = {
         last_name: 'NextProduct',
         username: 'admin.nextproduct@maildrop.cc',
         email: 'admin.nextproduct@maildrop.cc',
-        password: '$2y$10$Cc/ivkGoepVPQxrH/EvWDOHLElA/0A6J5YsV9Zr0Lzq2Lgd943ghK',
+        password: bcrypt.hashSync('password1234', salt),
         is_active: true,
         profile_image: 'https://via.placeholder.com/80x80?text=Admin',
         created_at: new Date(),
@@ -29,7 +33,7 @@ module.exports = {
         last_name: 'NextProduct',
         username: 'staff.nextproduct@maildrop.cc',
         email: 'staff.nextproduct@maildrop.cc',
-        password: '$2y$10$Cc/ivkGoepVPQxrH/EvWDOHLElA/0A6J5YsV9Zr0Lzq2Lgd943ghK',
+        password: bcrypt.hashSync('password1234', salt),
         is_active: true,
         profile_image: 'https://via.placeholder.com/80x80?text=Staff',
         created_at: new Date(),
