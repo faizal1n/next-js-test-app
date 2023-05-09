@@ -7,8 +7,694 @@
 	},
 	"item": [
 		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Product List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "start",
+								"value": "0",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "leng",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/products?start=0&length=10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"products"
+							],
+							"query": [
+								{
+									"key": "start",
+									"value": "0"
+								},
+								{
+									"key": "length",
+									"value": "10"
+								},
+								{
+									"key": "keyword",
+									"value": "ban",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Product List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "start",
+										"value": "0",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "leng",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/api/products?start=0&length=10",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"products"
+									],
+									"query": [
+										{
+											"key": "start",
+											"value": "0"
+										},
+										{
+											"key": "length",
+											"value": "10"
+										},
+										{
+											"key": "keyword",
+											"value": "ban",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "date",
+									"value": "Tue, 09 May 2023 06:26:48 GMT"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "etag",
+									"value": "\"10pdnzhs8pzmu\""
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "connection",
+									"value": "close"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"\",\n    \"result\": {\n        \"data\": [\n            {\n                \"id\": 1,\n                \"name\": \"Kaca Spion Standard\",\n                \"image\": \"https://via.placeholder.com/100x100?text=Spion\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Lampu Sein Motor Standard\",\n                \"image\": \"https://via.placeholder.com/200x100?text=Sein\"\n            },\n            {\n                \"id\": 3,\n                \"name\": \"Ban Luar Belakang Standard\",\n                \"image\": \"https://via.placeholder.com/200x100?text=Ban\"\n            },\n            {\n                \"id\": 4,\n                \"name\": \"Air Mineral\",\n                \"image\": \"/uploads/3f55c1f21329e03b1fa450301\"\n            },\n            {\n                \"id\": 5,\n                \"name\": \"Air Mineral\",\n                \"image\": \"/uploads/3f55c1f21329e03b1fa450302\"\n            },\n            {\n                \"id\": 6,\n                \"name\": \"Air Mineral\",\n                \"image\": \"/uploads/3f55c1f21329e03b1fa450303\"\n            },\n            {\n                \"id\": 7,\n                \"name\": \"Air Mineral\",\n                \"image\": \"/uploads/3f55c1f21329e03b1fa450304\"\n            },\n            {\n                \"id\": 8,\n                \"name\": \"Air Mineral\",\n                \"image\": \"/uploads/3f55c1f21329e03b1fa450305\"\n            },\n            {\n                \"id\": 9,\n                \"name\": \"Air Mineral\",\n                \"image\": \"/uploads/3f55c1f21329e03b1fa45030d\"\n            }\n        ],\n        \"start\": 0,\n        \"length\": 10,\n        \"totalCurrentData\": 9\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product_image",
+									"type": "file",
+									"src": "/Users/faizalen/Downloads/main-qimg-485bdb49d41961a0038090bb3cf901cd-lq.jpeg"
+								},
+								{
+									"key": "name",
+									"value": "Air Mineral",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Air mineral asli pegunungan galunggung",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "10000",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{base_url}}/api/products"
+					},
+					"response": [
+						{
+							"name": "Create Product",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "product_image",
+											"type": "file",
+											"src": "/Users/faizalen/Downloads/main-qimg-485bdb49d41961a0038090bb3cf901cd-lq.jpeg"
+										},
+										{
+											"key": "name",
+											"value": "Air Mineral",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Air mineral asli pegunungan galunggung",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "10000",
+											"type": "text"
+										}
+									]
+								},
+								"url": "{{base_url}}/api/products"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "date",
+									"value": "Tue, 09 May 2023 06:26:42 GMT"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "etag",
+									"value": "\"2rfjkwvntzt\""
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "connection",
+									"value": "close"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Product created\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Product Detail",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "start",
+								"value": "0",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "leng",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/products/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"1"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "ban",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Product Detail",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "start",
+										"value": "0",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "leng",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/api/products/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"1"
+									],
+									"query": [
+										{
+											"key": "keyword",
+											"value": "ban",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "date",
+									"value": "Tue, 09 May 2023 06:35:59 GMT"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "etag",
+									"value": "\"on3hef4rgc8k\""
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "connection",
+									"value": "close"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"\",\n    \"result\": {\n        \"id\": 1,\n        \"name\": \"Kaca Spion Standard\",\n        \"image\": \"https://via.placeholder.com/100x100?text=Spion\",\n        \"description\": \"Deskripsi Kaca Spion Standard\",\n        \"price\": 20000,\n        \"created_by\": 1,\n        \"is_active\": true,\n        \"created_at\": \"2023-05-08T06:56:18.000Z\",\n        \"updated_at\": \"2023-05-08T06:56:18.000Z\",\n        \"deleted_at\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Product Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "start",
+								"value": "0",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "leng",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Teh Saribotol",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Teh asli pegunungan galunggung",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "20000",
+									"type": "text"
+								},
+								{
+									"key": "product_image",
+									"type": "file",
+									"src": "/Users/faizalen/Downloads/logoxai.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/products/2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"2"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "ban",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Product Update",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "start",
+										"value": "0",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "leng",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Teh Saribotol",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Teh asli pegunungan galunggung",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "20000",
+											"type": "text"
+										},
+										{
+											"key": "product_image",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/products/2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"2"
+									],
+									"query": [
+										{
+											"key": "keyword",
+											"value": "ban",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "date",
+									"value": "Tue, 09 May 2023 07:04:08 GMT"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "etag",
+									"value": "\"x79hzbopw58t\""
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "connection",
+									"value": "close"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Product updated\",\n    \"result\": {\n        \"id\": 2,\n        \"name\": \"Teh Saribotol\",\n        \"image\": \"https://via.placeholder.com/200x100?text=Sein\",\n        \"description\": \"Teh asli pegunungan galunggung\",\n        \"price\": 20000,\n        \"created_by\": 2,\n        \"is_active\": true,\n        \"created_at\": \"2023-05-08T06:56:18.000Z\",\n        \"updated_at\": \"2023-05-09T06:54:16.000Z\",\n        \"deleted_at\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Product Update Active Status",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "start",
+								"value": "0",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "leng",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"is_active\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/products/2/active",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"2",
+								"active"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "ban",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Product Update Active Status",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "start",
+										"value": "0",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "leng",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"is_active\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/products/2/active",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"2",
+										"active"
+									],
+									"query": [
+										{
+											"key": "keyword",
+											"value": "ban",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "date",
+									"value": "Tue, 09 May 2023 07:28:53 GMT"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "etag",
+									"value": "\"iabhc2ai1t8z\""
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "connection",
+									"value": "close"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Product is successfully deleted\",\n    \"result\": {\n        \"id\": 2,\n        \"name\": \"Teh Saribotol\",\n        \"image\": \"/uploads/3f55c1f21329e03b1fa45030e\",\n        \"description\": \"Teh asli pegunungan galunggung\",\n        \"price\": 20000,\n        \"created_by\": 2,\n        \"is_active\": false,\n        \"created_at\": \"2023-05-08T06:56:18.000Z\",\n        \"updated_at\": \"2023-05-09T07:28:53.393Z\",\n        \"deleted_at\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Product Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "start",
+								"value": "0",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "leng",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/products/3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"3"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "ban",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Login",
 			"request": {
+				"auth": {
+					"type": "noauth"
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
@@ -25,6 +711,12 @@
 			"response": []
 		}
 	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "{{access_token}}"
+		}
+	},
 	"event": [
 		{
 			"listen": "prerequest",
@@ -53,7 +745,7 @@
 		},
 		{
 			"key": "access_token",
-			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsTmFtZSI6IkFkbWluIE5leHRQcm9kdWN0IiwiZW1haWwiOiJhZG1pbi5uZXh0cHJvZHVjdEBtYWlsZHJvcC5jYyIsInVzZXJJZCI6MSwiaWF0IjoxNjgzNTI4OTkzLCJleHAiOjE2ODM1MzI1OTN9.xzVHvWTB4YM8TLQ8C8PUTmJRD2lPWmOdcKYv_b8Fs-w",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsTmFtZSI6IkFkbWluIE5leHRQcm9kdWN0IiwiZW1haWwiOiJhZG1pbi5uZXh0cHJvZHVjdEBtYWlsZHJvcC5jYyIsInVzZXJJZCI6MSwiaWF0IjoxNjgzNTUyMTMzLCJleHAiOjE2ODYxNDQxMzN9.rS5uV3l5HMKHy9oIotcgBYB1PqUHD3zioqjbRkRLxLw",
 			"type": "string"
 		}
 	]
