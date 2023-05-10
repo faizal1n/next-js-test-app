@@ -1,9 +1,18 @@
 import Link from "next/link";
 import { useRouter } from 'next/router';
+import { useState, useEffect } from 'react';
+import { setCookie, hasCookie } from 'cookies-next';
 
 export default function Login() {
   const router = useRouter();
 
+  useEffect(() => {
+    if (hasCookie('authToken')) {
+      router.replace('/products');
+    }
+  },[]);
+
+  // On form submission, send form data to API, save token as cookie, redirect to products page
   async function onSubmitHandler(event) {
     event.preventDefault();
 
@@ -27,11 +36,11 @@ export default function Login() {
 
       const response = await fetch(endpoint, options);
 
-      const result = await response.json();
+      const jsonResponse = await response.json();
 
-      console.log(result);
+      setCookie('authToken', jsonResponse.result.token);
 
-      router.push('/')
+      router.push('/admin')
 
       return false;
     } catch (err) {
