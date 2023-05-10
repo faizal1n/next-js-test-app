@@ -2,13 +2,11 @@ import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import { getCookie, hasCookie } from 'cookies-next';
 
-// components
-import CardTable from '@/components/Cards/CardTable.js';
+import UpdateProductForm from 'components/Forms/UpdateProductForm.js';
 
-// layout
 import Admin from "layouts/Admin.js";
 
-export default function IndexProduct() {
+export default function UpdateProduct() {
   const router = useRouter();
   const [data, setData] = useState(null);
   const [isLoading, setLoading] = useState(false);
@@ -18,7 +16,8 @@ export default function IndexProduct() {
       router.replace('/login');
     }
 
-    setLoading(true);
+    const productId  = router.query.id;
+
     const options = {
       method: 'GET',
       headers: {
@@ -26,8 +25,9 @@ export default function IndexProduct() {
         'Authorization': 'Bearer '+getCookie('authToken')
       }
     };
+    setLoading(true);
 
-    fetch('/api/products?start=0&length=10', options)
+    fetch('/api/products/'+productId, options)
     .then((res) => res.json())
     .then((jsonResponse) => {
       setData(jsonResponse.result);
@@ -39,30 +39,20 @@ export default function IndexProduct() {
 
   }, []);
 
-  const columnDefinitions = [
-    { title : 'Foto', type: 'image', data: 'image' },
-    { title : 'Nama Produk', data: 'name'}
-  ];
-
   if (isLoading) return <p>Loading...</p>;
   if (!data) return <p>No data</p>;
 
   return (
     <>
-      <div className="flex flex-wrap mt-4">
-        <div className="w-full xl:w-12/12 mb-12 xl:mb-0 px-4">
-          <CardTable
-            color='light'
-            title='Daftar Produk'
-            columnMap={columnDefinitions}
-            rowData={data.data}
-            mainRoute='/admin/products'
+      <div className="flex flex-wrap">
+        <div className="w-full lg:w-12/12 px-4">
+          <UpdateProductForm
+            product={data}
           />
         </div>
       </div>
     </>
   );
-
 }
 
-IndexProduct.layout = Admin;
+UpdateProduct.layout = Admin;

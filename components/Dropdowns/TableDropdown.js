@@ -1,7 +1,7 @@
 import React from "react";
 import { createPopper } from "@popperjs/core";
 
-const NotificationDropdown = ({detailRoute}) => {
+const TableDropdown = ({detailRoute}) => {
   // dropdown props
   const [dropdownPopoverShow, setDropdownPopoverShow] = React.useState(false);
   const btnDropdownRef = React.createRef();
@@ -56,4 +56,4 @@ const NotificationDropdown = ({detailRoute}) => {
   );
 };
 
-export default NotificationDropdown;
+export default TableDropdown;

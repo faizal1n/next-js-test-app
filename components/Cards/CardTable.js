@@ -68,7 +68,7 @@ export default function CardTable({ color, title, columnMap, rowData, mainRoute 
       >
         <div className="rounded-t mb-0 px-4 py-3 border-0">
           <div className="flex flex-wrap items-center">
-            <div className="relative w-full px-4 max-w-full flex-grow flex-1">
+            <div className="flex w-full px-4 max-w-full justify-between">
               <h3
                 className={
                   "font-semibold text-lg " +
@@ -77,6 +77,15 @@ export default function CardTable({ color, title, columnMap, rowData, mainRoute 
               >
                 { title }
               </h3>
+              <Link href="/admin/products/create">
+                <button
+                  className="bg-blueGray-700 active:bg-blueGray-600 text-white font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
+                  type="button"
+                >
+                  <i className="fas fa-plus text-emerald-500 mr-4"></i>
+                  Tambah Produk
+                </button>
+              </Link>
             </div>
           </div>
         </div>
