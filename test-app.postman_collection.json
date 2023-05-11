@@ -708,7 +708,60 @@
 				},
 				"url": "{{base_url}}/api/auth"
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"admin.nextproduct@maildrop.cc\",\n    \"password\": \"password1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/api/auth"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "date",
+							"value": "Wed, 10 May 2023 00:43:57 GMT"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "etag",
+							"value": "\"coekd21zd0a9\""
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "connection",
+							"value": "close"
+						},
+						{
+							"key": "transfer-encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"result\": {\n        \"user\": {\n            \"email\": \"admin.nextproduct@maildrop.cc\",\n            \"first_name\": \"Admin\",\n            \"last_name\": \"NextProduct\"\n        },\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsTmFtZSI6IkFkbWluIE5leHRQcm9kdWN0IiwiZW1haWwiOiJhZG1pbi5uZXh0cHJvZHVjdEBtYWlsZHJvcC5jYyIsInVzZXJJZCI6MSwiaWF0IjoxNjgzNjc5NDM3LCJleHAiOjE2ODYyNzE0Mzd9.DS_STMX5iarU2Xdjr21tLXPVLRPmT7BtqeIGiUCWLkI\"\n    },\n    \"message\": \"\"\n}"
+				}
+			]
 		}
 	],
 	"auth": {
