@@ -42,6 +42,12 @@ There is imported Postman collection at `test-app.postman_collection.json` that 
 - [next-connect](https://www.npmjs.com/package/next-connect) : Routing library
 - [react-hook-form](https://react-hook-form.com/) : Form helper and validator on frontend side
 
+## Template Used
+Notus NextJS 
+[Dashboard](https://demos.creative-tim.com/notus-nextjs/admin/dashboard?ref=nnjs-github-readme)
+
+Other suggestions:
+[Mui Core](https://mui.com/material-ui/getting-started/overview/)
 
 ## Directory Structure
 ```
