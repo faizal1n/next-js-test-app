@@ -36,3 +36,4 @@ next-env.d.ts
 
 # upload files
 public/uploads/*
+!public/uploads/receipt-sample.pdf
