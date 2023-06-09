@@ -23,6 +23,8 @@
     "next": "^13.3.1",
     "next-connect": "^1.0.0-next.3",
     "nextjs-cors": "^2.1.2",
+    "pg": "^8.11.0",
+    "pg-hstore": "^2.3.4",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
